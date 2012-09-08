@@ -9,18 +9,18 @@ editor: 'vi'
 # Ignoring files in ~/.dotify when linking:
 #
 ignore:
-   dotify:
-    - '.git'
-    - '.gitignore'
-    - '.gitmodules'
+    dotify:
+        - '.git'
+        - '.gitignore'
+        - '.gitmodules'
     # Ignoring files in the home directory when linking:
     dotify:
-    - '.ssh'
-    - '.rbenv'
-    - '.rvm'
-    - '.bash_history'
-    - '.sqlite_history'
-    - '.rdebug_hist'
-    - '.heroku'
-    - '.netrc'
-    - '.dropbox'
+        - '.ssh'
+        - '.rbenv'
+        - '.rvm'
+        - '.bash_history'
+        - '.sqlite_history'
+        - '.rdebug_hist'
+        - '.heroku'
+        - '.netrc'
+        - '.dropbox'
