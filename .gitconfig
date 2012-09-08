@@ -1,0 +1,33 @@
+[user]
+	name = Noah Davis
+	email = noahd1@yahoo.com
+
+[core]
+	editor = subl -w
+
+[color]
+    diff = auto
+    branch = auto
+    status = auto
+
+[diff]
+    renames = true
+
+[alias]
+    st = status
+    d = diff
+    ci = commit -v
+    cia = commit -v -a
+    co = checkout
+    cp = cherry-pick
+    l = log
+    ll = log -p
+    lt = log trunk..
+    llt = log -p trunk..
+    lm = log master..
+    llm = log -p master..
+    b = branch
+    who = "!echo ; echo ; echo \"\\tworking as `git config user.name`...\" ; echo ; echo"
+    what = "!git who ; git diff"
+[push]
+	default = upstream
