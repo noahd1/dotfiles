@@ -9,7 +9,7 @@ alias ps?='ps aux | grep '
 # git aliases
 alias gs='git status'
 alias gst='git status'
-alias gd='git diff | subl'
+alias gd="subl-pipe git-diff 'git diff'"
 alias gpr='git pull --rebase'
 alias gitl='git log --pretty=format:"%h %ar %Cblue %an %Cred %s"'
 alias gb='git branch'

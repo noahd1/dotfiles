@@ -7,7 +7,7 @@ source ~/.bash_functions
 source /usr/local/etc/bash_completion.d/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=1
 
-export EDITOR="subl -w"
+export EDITOR="subl"
 export CLICOLOR=1
 export LSCOLORS="exfxcxdxbxegedabagacad"
 
