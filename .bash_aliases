@@ -32,4 +32,5 @@ alias desc='mysql_desc'
 alias indexes='mysql_indexes'
 
 # projects
-alias racquet='cd ~/Projects/Mini-Racquet'
+alias rq='cd ~/Projects/Mini-Racquet'
+alias cio='cd ~/customerio/mvp'
