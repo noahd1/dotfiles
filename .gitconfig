@@ -31,3 +31,5 @@
     what = "!git who ; git diff"
 [push]
 	default = upstream
+[credential]
+	helper = osxkeychain

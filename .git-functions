@@ -1,8 +1,15 @@
 #!/bin/bash
 
-function ssht() {
-  ssh -t gw ssh -At $@
-}
+if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
+	. `brew --prefix`/etc/bash_completion.d/git-completion.bash
+fi
+
+if [ -f `brew --prefix`/etc/bash_completion.d/git-prompt.sh ]; then
+	. `brew --prefix`/etc/bash_completion.d/git-prompt.sh
+fi
+
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
 
 function fancy_shell_prompt {
   local        BLUE="\[\033[0;34m\]"
