@@ -1,9 +1,8 @@
 #!/bin/bash
 
-export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.rbenv/bin:/usr/local/share/python:$PATH"
 
 source ~/.bash_aliases
-source ~/.bash_functions
 source ~/.ruby_gc
 source ~/.git-functions
 
@@ -12,3 +11,6 @@ export CLICOLOR=1
 export LSCOLORS="exfxcxdxbxegedabagacad"
 
 eval "$(rbenv init -)"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
