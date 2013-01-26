@@ -2,18 +2,18 @@ require 'pathname'
 
 Maid.rules do
 
-  rule 'Mac OS X applications in disk images' do
+  rule 'Remove downloaded disk images' do
     trash(dir('~/Downloads/*.dmg'))
   end
 
-  rule 'Mac OS X applications in zip files' do
+  rule 'Remove downloaded zipped applications' do
     found = dir('~/Downloads/*.zip').select { |path|
       zipfile_contents(path).any? { |c| c.match(/\.app$/) }
     }
     trash(found)
   end
 
-  rule 'Old files downloaded while developing/testing' do
+  rule 'Remove older files downloaded during development/testing' do
     dir('~/Downloads/*').each do |path|
       if downloaded_from(path).any? { |u| u.match('http://*.dev') } &&
           1.week.since?(accessed_at(path))
@@ -35,7 +35,7 @@ Maid.rules do
     trash(found)
   end
 
-  rule 'Remove unzipped files' do
+  rule 'Remove unzipped file if zipped file exists' do
     found = dir('~/Downloads/*').select do |path|
       if result = path.match(/(.*)\.zip$/) || result = path.match(/(.*)\.tar\.gz$/)
         File.exist?(result[1])
@@ -44,8 +44,7 @@ Maid.rules do
     trash(found)
   end
 
-  rule 'Organize files in Downloads directory' do
-    puts "Running rule"
+  rule 'Organize remaining files in Downloads directory by year/month' do
     dir("~/Downloads/*").each do |path|
       dirname, filename = Pathname.new(path).split
       file_created_at = created_at(path)
