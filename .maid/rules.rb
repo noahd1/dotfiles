@@ -44,11 +44,11 @@ Maid.rules do
     trash(found)
   end
 
-  rule 'Organize remaining files in Downloads directory by year/month' do
+  rule 'Archive remaining downloaded files in Archive with directory by year/month' do
     dir("~/Downloads/*").each do |path|
       dirname, filename = Pathname.new(path).split
       file_created_at = created_at(path)
-      new_directory = Pathname.new("~/Documents") + file_created_at.year.to_s + file_created_at.month.to_s.rjust(2, "0")
+      new_directory = Pathname.new("~/Archive") + file_created_at.year.to_s + file_created_at.month.to_s.rjust(2, "0")
       mkdir new_directory
       move(path, new_directory + filename)
     end
