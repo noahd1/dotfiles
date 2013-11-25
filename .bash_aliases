@@ -39,3 +39,5 @@ alias cc='cd ~/p/codeclimate'
 alias ccwork='cd ~/p/quality-worker'
 alias work='cd ~/p/quality-worker'
 alias smoke='cd ~/p/quality-smoke'
+
+alias docker='docker -H=tcp://127.0.0.1:2200'
